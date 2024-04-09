@@ -35,31 +35,31 @@ const Search: FC<Props> = ({
       <div className='container mx-auto flex gap-4 flex-wrap justify-between items-center'>
         <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0'>
           <label className='block text-sm font-medium mb-2 text-black'>
-            Room Type
+            Тип номера
           </label>
           <div className='relative'>
             <select
               value={roomTypeFilter}
               onChange={handleRoomTypeChange}
-              className='w-full px-4 py-2 capitalize rounded leading-tight dark:bg-black focus:outline-none'
+              className='min-w-[200px] w-full px-4 py-2 capitalize rounded leading-tight dark:bg-black focus:outline-none'
             >
-              <option value='All'>All</option>
-              <option value='Basic'>Basic</option>
-              <option value='Luxury'>Luxury</option>
-              <option value='Suite'>Suite</option>
+              <option value='All'>Все</option>
+              <option value='Basic'>Недорогие</option>
+              <option value='Luxury'>Элитные</option>
+              <option value='Suite'>Люкс</option>
             </select>
           </div>
         </div>
 
         <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0'>
           <label className='block text-sm font-medium mb-2 text-black'>
-            Search
+            Поиск
           </label>
           <input
             type='search'
             id='search'
-            placeholder='Search...'
-            className='w-full px-4 py-3 rounded leading-tight dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white'
+            placeholder='Поиск...'
+            className='min-w-[300px] w-full px-4 py-3 rounded leading-tight dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white'
             value={searchQuery}
             onChange={handleSearchQueryChange}
           />
@@ -70,7 +70,7 @@ const Search: FC<Props> = ({
           type='button'
           onClick={handleFilterClick}
         >
-          Search
+          Искать
         </button>
       </div>
     </section>

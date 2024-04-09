@@ -3,6 +3,7 @@
 import { Dispatch, FC, SetStateAction } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import ru from "date-fns/locale/ru"
 
 type Props = {
   checkinDate: Date | null;
@@ -54,13 +55,13 @@ const BookRoomCta: FC<Props> = props => {
         <span
           className={`${discount ? 'text-gray-400' : ''} font-bold text-xl`}
         >
-          $ {price}
+          {price} сом
         </span>
         {discount ? (
           <span className='font-bold text-xl'>
             {' '}
-            | discount {discount}%. Now{' '}
-            <span className='text-tertiary-dark'>$ {discountPrice}</span>
+            | скидка {discount}%.{' '}
+            <span className='text-tertiary-dark'>{discountPrice} сом</span>
           </span>
         ) : (
           ''
@@ -77,9 +78,10 @@ const BookRoomCta: FC<Props> = props => {
             htmlFor='check-in-date'
             className='block text-sm font-medium text-gray-900 dark:text-gray-400'
           >
-            Check In date
+            Дата заезда
           </label>
           <DatePicker
+              locale={ru}
             selected={checkinDate}
             onChange={date => setCheckinDate(date)}
             dateFormat='dd/MM/yyyy'
@@ -93,10 +95,11 @@ const BookRoomCta: FC<Props> = props => {
             htmlFor='check-out-date'
             className='block text-sm font-medium text-gray-900 dark:text-gray-400'
           >
-            Check Out date
+            Дата отъезда
           </label>
           <DatePicker
-            selected={checkoutDate}
+              locale={ru}
+              selected={checkoutDate}
             onChange={date => setCheckoutDate(date)}
             dateFormat='dd/MM/yyyy'
             disabled={!checkinDate}
@@ -113,7 +116,7 @@ const BookRoomCta: FC<Props> = props => {
             htmlFor='adults'
             className='block text-sm font-medium text-gray-900 dark:text-gray-400'
           >
-            Adults
+            Взрослые
           </label>
           <input
             type='number'
@@ -130,7 +133,7 @@ const BookRoomCta: FC<Props> = props => {
             htmlFor='children'
             className='block text-sm font-medium text-gray-900 dark:text-gray-400'
           >
-            Children
+           Дети
           </label>
           <input
             type='number'
@@ -145,7 +148,7 @@ const BookRoomCta: FC<Props> = props => {
       </div>
 
       {calcNoOfDays() > 0 ? (
-        <p className='mt-3'>Total Price: $ {calcNoOfDays() * discountPrice}</p>
+        <p className='mt-3'>Итоговая цена: {calcNoOfDays() * discountPrice} сом</p>
       ) : (
         <></>
       )}
@@ -155,7 +158,7 @@ const BookRoomCta: FC<Props> = props => {
         onClick={handleBookNowClick}
         className='btn-primary w-full mt-6 disabled:bg-gray-500 disabled:cursor-not-allowed'
       >
-        {isBooked ? 'Booked' : 'Book Now'}
+        {isBooked ? 'Забронировано' : 'Забронировать сейчас'}
       </button>
     </div>
   );

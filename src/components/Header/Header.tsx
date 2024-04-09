@@ -15,10 +15,10 @@ const Header = () => {
   const { data: session } = useSession();
 
   return (
-    <header className='py-10 px-4 container mx-auto text-xl flex flex-wrap md:flex-nowrap items-center justify-between'>
+    <header className='py-6 px-4 container mx-auto text-xl flex flex-wrap md:flex-nowrap items-center justify-between'>
       <div className='flex items-center w-full md:2/3'>
         <Link href='/' className='font-black text-tertiary-dark'>
-          Hotelzz
+          Dastan Hotel
         </Link>
         <ul className='flex items-center ml-5'>
           <li className='flex items-center'>
@@ -68,13 +68,13 @@ const Header = () => {
 
       <ul className='flex items-center justify-between w-full md:w-1/3 mt-4'>
         <li className='hover:-translate-y-2 duration-500 transition-all'>
-          <Link href='/'>Home</Link>
+          <Link href='/'>Главная</Link>
         </li>
         <li className='hover:-translate-y-2 duration-500 transition-all'>
-          <Link href='/rooms'>Rooms</Link>
+          <Link href='/rooms'>Номера</Link>
         </li>
         <li className='hover:-translate-y-2 duration-500 transition-all'>
-          <Link href='/'>Contact</Link>
+          <Link href='/'>Контакты</Link>
         </li>
       </ul>
     </header>

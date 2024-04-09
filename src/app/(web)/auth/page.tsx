@@ -38,7 +38,7 @@ const Auth = () => {
       router.push('/');
     } catch (error) {
       console.log(error);
-      toast.error("Something wen't wrong");
+      toast.error("Что-то пошло не так");
     }
   };
 
@@ -48,11 +48,11 @@ const Auth = () => {
     try {
       const user = await signUp(formData);
       if (user) {
-        toast.success('Success. Please sign in');
+        toast.success('Успешно. Пожалуйста, войдите в аккаунт');
       }
     } catch (error) {
       console.log(error);
-      toast.error("Something wen't wrong");
+      toast.error("Что-то пошло не так");
     } finally {
       setFormData(defaultFormData);
     }
@@ -63,15 +63,10 @@ const Auth = () => {
       <div className='p-6 space-y-4 md:space-y-6 sm:p-8 w-80 md:w-[70%] mx-auto'>
         <div className='flex mb-8 flex-col md:flex-row items-center justify-between'>
           <h1 className='text-xl font-bold leading-tight tracking-tight md:text-2xl'>
-            Create an account
+            Создать аккауант
           </h1>
-          <p>OR</p>
+          <p>или</p>
           <span className='inline-flex items-center'>
-            <AiFillGithub
-              onClick={loginHandler}
-              className='mr-3 text-4xl cursor-pointer text-black dark:text-white'
-            />{' '}
-            |
             <FcGoogle
               onClick={loginHandler}
               className='ml-3 text-4xl cursor-pointer'
@@ -83,7 +78,7 @@ const Auth = () => {
           <input
             type='email'
             name='email'
-            placeholder='name@company.com'
+            placeholder='Email'
             required
             className={inputStyles}
             value={formData.email}
@@ -92,7 +87,7 @@ const Auth = () => {
           <input
             type='text'
             name='name'
-            placeholder='John Doe'
+            placeholder='Имя'
             required
             className={inputStyles}
             value={formData.name}
@@ -101,7 +96,7 @@ const Auth = () => {
           <input
             type='password'
             name='password'
-            placeholder='password'
+            placeholder='Пароль'
             required
             minLength={6}
             className={inputStyles}
@@ -111,14 +106,14 @@ const Auth = () => {
 
           <button
             type='submit'
-            className='w-full bg-tertiary-dark focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center'
+            className='w-full bg-tertiary-dark focus:outline-none font-medium rounded-lg text-white text-sm px-5 py-2.5 text-center'
           >
-            Sign Up
+            Зарегистрироваться
           </button>
         </form>
 
         <button onClick={loginHandler} className='text-blue-700 underline'>
-          login
+          Войти
         </button>
       </div>
     </section>

@@ -17,6 +17,7 @@ import Chart from '@/components/Chart/Chart';
 import RatingModal from '@/components/RatingModal/RatingModal';
 import BackDrop from '@/components/BackDrop/BackDrop';
 import toast from 'react-hot-toast';
+import { format } from "date-fns";
 
 const UserDetails = (props: { params: { id: string } }) => {
   const {
@@ -50,7 +51,7 @@ const UserDetails = (props: { params: { id: string } }) => {
         roomId,
       });
       console.log(data);
-      toast.success('Review Submitted');
+      toast.success('Отзыв оставлен');
     } catch (error) {
       console.log(error);
       toast.error('Review Failed');
@@ -101,20 +102,21 @@ const UserDetails = (props: { params: { id: string } }) => {
               alt={userData.name}
               width={143}
               height={143}
+              quality={100}
               className='img scale-animation rounded-full'
             />
           </div>
           <div className='font-normal py-4 text-left'>
-            <h6 className='text-xl font-bold pb-3'>About</h6>
+            <h6 className='text-xl font-bold pb-3'>Профиль</h6>
             <p className='text-sm'>{userData.about ?? ''}</p>
           </div>
           <div className='font-normal text-left'>
             <h6 className='text-xl font-bold pb-3'>{userData.name}</h6>
           </div>
           <div className='flex items-center'>
-            <p className='mr-2'>Sign Out</p>
+            <p className='mr-2'>Выйти</p>
             <FaSignOutAlt
-              className='text-3xl cursor-pointer'
+              className='text-xl cursor-pointer'
               onClick={() => signOut({ callbackUrl: '/' })}
             />
           </div>
@@ -122,7 +124,7 @@ const UserDetails = (props: { params: { id: string } }) => {
 
         <div className='md:col-span-8 lg:col-span-9'>
           <div className='flex items-center'>
-            <h5 className='text-2xl font-bold mr-3'>Hello, {userData.name}</h5>
+            <h5 className='text-2xl font-bold mr-3'>Здравствуйте, {userData.name}</h5>
           </div>
           <div className='md:hidden w-14 h-14 rounded-l-full overflow-hidden'>
             <Image
@@ -138,10 +140,10 @@ const UserDetails = (props: { params: { id: string } }) => {
           </p>
 
           <p className='text-xs py-2 font-medium'>
-            Joined In {userData._createdAt.split('T')[0]}
+            Дата регистрации {format(new Date(userData._createdAt), "dd.MM.yyyy")}
           </p>
           <div className='md:hidden flex items-center my-2'>
-            <p className='mr-2'>Sign out</p>
+            <p className='mr-2'>Выйти</p>
             <FaSignOutAlt
               className='text-3xl cursor-pointer'
               onClick={() => signOut({ callbackUrl: '/' })}
@@ -160,7 +162,7 @@ const UserDetails = (props: { params: { id: string } }) => {
               >
                 <BsJournalBookmarkFill />
                 <a className='inline-flex items-center mx-1 md:mx-3 text-xs md:text-sm font-medium'>
-                  Current Bookings
+                  Забронированные
                 </a>
               </li>
             </ol>
@@ -175,7 +177,7 @@ const UserDetails = (props: { params: { id: string } }) => {
               >
                 <GiMoneyStack />
                 <a className='inline-flex items-center mx-1 md:mx-3 text-xs md:text-sm font-medium'>
-                  Amount Spent
+                  Всего потрачено
                 </a>
               </li>
             </ol>

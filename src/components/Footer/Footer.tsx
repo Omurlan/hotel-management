@@ -7,42 +7,42 @@ const Footer = () => {
     <footer className='mt-16'>
       <div className='container mx-auto px-4'>
         <Link href='/' className='font-black text-tertiary-dark'>
-          Hotelzz
+          Dastan Hotel
         </Link>
 
-        <h4 className='font-semibold text-[40px] py-6'>Contact</h4>
+        <h4 className='font-semibold text-[40px] py-6'>Контакты</h4>
 
         <div className='flex flex-wrap gap-16 items-center justify-between'>
           <div className='flex-1'>
-            <p>123 Road</p>
+            <p>ул. Абая 40 1 этаж, 720001 Бишкек</p>
             <div className='flex items-center py-4'>
               <BsFillSendFill />
-              <p className='ml-2'>codewithlari</p>
+              <p className='ml-2'>dastanhotel</p>
             </div>
             <div className='flex items-center'>
               <BsTelephoneOutbound />
-              <p className='ml-2'>000-000-00</p>
+              <p className='ml-2'>0234-345-234</p>
             </div>
             <div className='flex items-center pt-4'>
               <BiMessageDetail />
-              <p className='ml-2'>codewithlari</p>
+              <p className='ml-2'>dastanhotel</p>
             </div>
           </div>
 
           <div className='flex-1 md:text-right'>
-            <p className='pb-4'>Our Story</p>
-            <p className='pb-4'>Get in Touch</p>
-            <p className='pb-4'>Our Privacy Commitment</p>
-            <p className='pb-4'>Terms of service</p>
-            <p>Customer Assistance</p>
+            <p className='pb-4'>О нас</p>
+            <p className='pb-4'>Связаться с нами</p>
+            <p className='pb-4'>Конфиденциальность</p>
+            <p className='pb-4'>Условия пользования</p>
+            <p>Помощь клиентам</p>
           </div>
 
           <div className='flex-1 md:text-right'>
-            <p className='pb-4'>Dining Experience</p>
-            <p className='pb-4'>Wellness</p>
-            <p className='pb-4'>Fitness</p>
-            <p className='pb-4'>Sports</p>
-            <p>Events</p>
+            <p className='pb-4'>Кухня</p>
+            <p className='pb-4'>СПА</p>
+            <p className='pb-4'>Фитнес</p>
+            <p className='pb-4'>Спорт</p>
+            <p>Мероприятия</p>
           </div>
         </div>
       </div>

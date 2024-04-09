@@ -36,11 +36,11 @@ const RatingModal: FC<Props> = props => {
     >
       <div className='bg-white w-96 p-4 rounded-lg shadow-lg'>
         <h2 className='text-xl dark:text-gray-800 font-semibold mb-2'>
-          Rate Your Experience
+          Оцените ваш опыт пребывания
         </h2>
         <div className='mb-4'>
           <label className='block text-sm font-medium text-gray-700'>
-            Rating
+            Рейтинг
           </label>
           <div className='flex items-center'>
             {starValues.map(value => (
@@ -59,7 +59,7 @@ const RatingModal: FC<Props> = props => {
 
         <div className='mb-4'>
           <label className='block text-sm font-medium text-gray-700'>
-            Review Text
+            Отзыв
           </label>
 
           <textarea
@@ -76,13 +76,13 @@ const RatingModal: FC<Props> = props => {
             className='px-4 py-2 bg-primary text-white rounded-md'
             disabled={isSubmittingReview}
           >
-            {isSubmittingReview ? 'Submitting' : 'Submit'}
+            {isSubmittingReview ? 'Отправка' : 'Отправить'}
           </button>
           <button
             onClick={toggleRatingModal}
             className='ml-2 px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400'
           >
-            Cancel
+            Отмена
           </button>
         </div>
       </div>

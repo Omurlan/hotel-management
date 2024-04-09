@@ -44,8 +44,8 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
               src={photos[0].url}
               alt={`Room Photo ${currenPhotoIndex + 1}`}
               className='img scale-animation cursor-pointer'
-              width={150}
-              height={150}
+              width={300}
+              height={300}
               onClick={openModal.bind(this, 0)}
             />
           </div>
@@ -54,8 +54,8 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
               src={photos[currenPhotoIndex].url}
               alt={`Room Photo ${currenPhotoIndex + 1}`}
               className='img'
-              width={150}
-              height={150}
+              width={300}
+              height={300}
               onClick={openModal.bind(this, 0)}
             />
           </div>
@@ -77,8 +77,8 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
               className='cursor-pointer h-64 rounded-2xl overflow-hidden'
             >
               <Image
-                width={150}
-                height={150}
+                width={300}
+                height={300}
                 src={photo.url}
                 alt={`Room Photo ${index + 2}`}
                 className='img scale-animation'
@@ -91,8 +91,8 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
               onClick={openModal.bind(this, maximumVisiblePhotos)}
             >
               <Image
-                width={150}
-                height={150}
+                width={300}
+                height={300}
                 src={photos[maximumVisiblePhotos - 1].url}
                 alt={`Room Photo ${maximumVisiblePhotos}`}
                 className='img'
@@ -106,12 +106,13 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
 
         {showModal && (
           <div className='fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-90 z-[55]'>
-            <div className='h-[75vh] w-[320px] md:w-[700px] relative'>
+            <div  className='h-[75vh] w-[320px] md:w-[700px] relative'>
               <Image
                 src={photos[currenPhotoIndex].url}
                 alt={`Room Photo ${currenPhotoIndex + 1}`}
-                width={150}
-                height={150}
+                width={600}
+                height={600}
+                quality={100}
                 className='img'
               />
               <div className='flex justify-between items-center py-3'>
@@ -133,7 +134,7 @@ const HotelPhotoGallery: FC<{ photos: ImageType[] }> = ({ photos }) => {
                 className='absolute top-2 right-2 text-white text-lg'
                 onClick={closeModal}
               >
-                <MdCancel className='font-medium text-2xl text-tertiary-dark' />
+                <MdCancel className='font-medium text-3xl text-white' />
               </button>
             </div>
           </div>

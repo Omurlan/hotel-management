@@ -8,12 +8,12 @@ const roomTypes = [
 
 const hotelRoom = {
   name: 'hotelRoom',
-  title: 'Hotel Room',
+  title: 'Номера',
   type: 'document',
   fields: [
     defineField({
       name: 'name',
-      title: 'Name',
+      title: 'Название',
       type: 'string',
       validation: Rule =>
         Rule.required().max(50).error('Maximum 50 Characters'),
@@ -28,28 +28,28 @@ const hotelRoom = {
     }),
     defineField({
       name: 'description',
-      title: 'Description',
+      title: 'Описание',
       type: 'text',
       validation: Rule =>
         Rule.required().min(100).error('Minimum 100 Characters'),
     }),
     defineField({
       name: 'price',
-      title: 'Price',
+      title: 'Цена',
       type: 'number',
       validation: Rule =>
         Rule.required().min(100).error('Minimum 100 Characters'),
     }),
     defineField({
       name: 'discount',
-      title: 'Discount',
+      title: 'Скидка',
       type: 'number',
       initialValue: 0,
       validation: Rule => Rule.min(0),
     }),
     defineField({
       name: 'images',
-      title: 'Images',
+      title: 'Изображения',
       type: 'array',
       of: [
         {
@@ -65,7 +65,7 @@ const hotelRoom = {
     }),
     defineField({
       name: 'coverImage',
-      title: 'Cover Image',
+      title: 'Обложка',
       type: 'object',
       fields: [
         { name: 'url', type: 'url', title: 'URL' },
@@ -75,7 +75,7 @@ const hotelRoom = {
     }),
     defineField({
       name: 'type',
-      title: 'Room Type',
+      title: 'Тип номера',
       type: 'string',
       options: {
         list: roomTypes,
@@ -85,27 +85,26 @@ const hotelRoom = {
     }),
     defineField({
       name: 'specialNote',
-      title: 'Special Note',
+      title: 'Особая заметка',
       type: 'text',
       validation: Rule => Rule.required(),
-      initialValue:
-        'Check-in time is 12:00 PM, checkout time is 11:59 AM. If you leave behind any items, please contact the receptionist.',
+      initialValue: 'Время заезда — 12:00, время выезда — 11:59. Если вы оставили какие-либо вещи, пожалуйста, свяжитесь с администратором.',
     }),
     defineField({
       name: 'dimension',
-      title: 'Dimension',
+      title: 'Размер',
       type: 'string',
     }),
     defineField({
       name: 'numberOfBeds',
-      title: 'Number Of Beds',
+      title: 'Количество диванов',
       type: 'number',
       validation: Rule => Rule.min(1),
       initialValue: 1,
     }),
     defineField({
       name: 'offeredAmenities',
-      title: 'Offered Amenities',
+      title: 'Удобства',
       type: 'array',
       of: [
         {
@@ -119,21 +118,15 @@ const hotelRoom = {
     }),
     defineField({
       name: 'isBooked',
-      title: 'Is Booked',
+      title: 'Забронировано',
       type: 'boolean',
       initialValue: false,
     }),
     defineField({
       name: 'isFeatured',
-      title: 'Is Featured',
+      title: 'Рекомендуемый',
       type: 'boolean',
       initialValue: false,
-    }),
-    defineField({
-      name: 'reviews',
-      title: 'Reviews',
-      type: 'array',
-      of: [{ type: 'review' }],
     }),
   ],
 };

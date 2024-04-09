@@ -19,12 +19,12 @@ const Table: FC<Props> = ({ bookingDetails, setRoomId, toggleRatingModal }) => {
       <table className='w-full text-sm text-left text-gray-500'>
         <thead className='text-xs text-gray-700 uppercase bg-gray-50'>
           <tr>
-            <th className='px-6 py-3'>Room name</th>
-            <th className='px-6 py-3'>Unit Price</th>
-            <th className='px-6 py-3'>Price</th>
-            <th className='px-6 py-3'>Discount</th>
-            <th className='px-6 py-3'>No. Days Booked</th>
-            <th className='px-6 py-3'>Days Left</th>
+            <th className='px-6 py-3'>Название номера</th>
+            <th className='px-6 py-3'>Цена за день</th>
+            <th className='px-6 py-3'>Цена</th>
+            <th className='px-6 py-3'>Скидка</th>
+            <th className='px-6 py-3'>Дней забронировано</th>
+            <th className='px-6 py-3'>Осталось дней</th>
             <th className='px-6 py-3'></th>
           </tr>
         </thead>
@@ -42,9 +42,9 @@ const Table: FC<Props> = ({ bookingDetails, setRoomId, toggleRatingModal }) => {
               >
                 {booking.hotelRoom.name}
               </th>
-              <td className='px-6 py-4'>{booking.hotelRoom.price}</td>
-              <td className='px-6 py-4'>{booking.totalPrice}</td>
-              <td className='px-6 py-4'>{booking.discount}</td>
+              <td className='px-6 py-4'>{booking.hotelRoom.price}c</td>
+              <td className='px-6 py-4'>{booking.totalPrice}c</td>
+              <td className='px-6 py-4'>{booking.discount}c</td>
               <td className='px-6 py-4'>{booking.numberOfDays}</td>
               <td className='px-6 py-4'>0</td>
               <td className='px-6 py-4'>
@@ -55,7 +55,7 @@ const Table: FC<Props> = ({ bookingDetails, setRoomId, toggleRatingModal }) => {
                   }}
                   className='font-medium text-blue-600 hover:underline'
                 >
-                  Rate
+                  Оценить
                 </button>
               </td>
             </tr>

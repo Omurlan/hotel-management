@@ -210,5 +210,7 @@ export async function getRoomReviews(roomId: string) {
     { cache: 'no-cache' }
   );
 
+  console.log(result, roomId, "HELLO")
+
   return result;
 }

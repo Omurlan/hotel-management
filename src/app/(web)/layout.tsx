@@ -8,16 +8,16 @@ import ThemeProvider from '@/components/ThemeProvider/ThemeProvider';
 import { NextAuthProvider } from '@/components/AuthProvider/AuthProvider';
 import Toast from '@/components/Toast/Toast';
 
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '500', '700', '900'],
-  style: ['italic', 'normal'],
-  variable: '--font-poppins',
-});
+// const poppins = Poppins({
+//   subsets: ['latin'],
+//   weight: ['400', '500', '700', '900'],
+//   style: ['italic', 'normal'],
+//   variable: '--font-poppins',
+// });
 
 export const metadata: Metadata = {
-  title: 'Hotel Management App',
-  description: 'Discover the best hotel rooms',
+  title: 'Dastan Hotel',
+  description: 'Посетите наш отель',
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
           crossOrigin='anonymous'
         />
       </head>
-      <body className={poppins.className}>
+      <body>
         <NextAuthProvider>
           <ThemeProvider>
             <Toast />

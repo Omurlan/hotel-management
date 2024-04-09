@@ -2,35 +2,35 @@ import { defineField } from 'sanity';
 
 const review = {
   name: 'review',
-  title: 'Review',
+  title: 'Отзывы',
   type: 'document',
   fields: [
     defineField({
       name: 'user',
-      title: 'User',
+      title: 'Пользователь',
       type: 'reference',
       to: [{ type: 'user' }],
       validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'hotelRoom',
-      title: 'Hotel Room',
+      title: 'Номер в отеле',
       type: 'reference',
       to: [{ type: 'hotelRoom' }],
       validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'text',
-      title: 'Review Text',
+      title: 'Отзыв',
       type: 'text',
       validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'userRating',
-      title: 'User Rating',
+      title: 'Рейтинг',
       type: 'number',
       validation: Rule =>
-        Rule.required().min(1).max(5).error('Rating must be between 1 and 5'),
+        Rule.required().min(1).max(5).error('Оценка должна быть от 1 до 5.'),
     }),
   ],
 };
