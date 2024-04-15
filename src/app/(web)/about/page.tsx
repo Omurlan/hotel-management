@@ -15,6 +15,7 @@ const About = () => {
           <p className="text-center">
             Разработка системы управления сайта гостиничного комплекса{" "}
             <strong>«Дастан»</strong> выполнил ст.гр. ИТУ-20 Торакулов А. А.
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
             Руководитель ст. преп. каф "ИТи М" Мамадалиева К.А.
           </p>
         </div>
