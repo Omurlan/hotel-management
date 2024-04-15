@@ -16,7 +16,13 @@ import {
   LogIn,
   Menu,
 } from "lucide-react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  MutableRefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useMediaQuery } from "react-responsive";
 import { useRect } from "@dnd-kit/core/dist/hooks/utilities";
 import { useClickAway } from "@uidotdev/usehooks";
@@ -59,7 +65,7 @@ export const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const divRef = useClickAway(() => {
+  const divRef: MutableRefObject<HTMLDivElement> = useClickAway(() => {
     setIsOpen(false);
   });
 
