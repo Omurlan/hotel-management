@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import { useRouter } from 'next/navigation';
-import { ChangeEvent, FC } from 'react';
+import { useRouter } from "next/navigation";
+import { ChangeEvent, FC } from "react";
+import Select from "react-select";
 
 type Props = {
   roomTypeFilter: string;
@@ -31,43 +32,43 @@ const Search: FC<Props> = ({
   };
 
   return (
-    <section className='bg-tertiary-light px-4 py-6 rounded-lg'>
-      <div className='container mx-auto flex gap-4 flex-wrap justify-between items-center'>
-        <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0'>
-          <label className='block text-sm font-medium mb-2 text-black'>
+    <section className="bg-yellow-500 px-4 py-4 rounded-xl">
+      <div className="container mx-auto flex gap-4 flex-wrap justify-between items-center">
+        <div className="w-full md:1/3 lg:w-auto mb-4 md:mb-0">
+          <label className="block text-sm font-medium mb-2 text-black">
             Тип номера
           </label>
-          <div className='relative'>
+          <div className="relative">
             <select
               value={roomTypeFilter}
               onChange={handleRoomTypeChange}
-              className='min-w-[200px] w-full px-4 py-2 capitalize rounded leading-tight dark:bg-black focus:outline-none'
+              className="min-w-[230px] w-full px-4 py-3 rounded-lg"
             >
-              <option value='All'>Все</option>
-              <option value='Basic'>Недорогие</option>
-              <option value='Luxury'>Элитные</option>
-              <option value='Suite'>Люкс</option>
+              <option value="All">Все</option>
+              <option value="Basic">Недорогие</option>
+              <option value="Luxury">Элитные</option>
+              <option value="Suite">Люкс</option>
             </select>
           </div>
         </div>
 
-        <div className='w-full md:1/3 lg:w-auto mb-4 md:mb-0'>
-          <label className='block text-sm font-medium mb-2 text-black'>
+        <div className="w-full md:1/3 lg:w-auto mb-4 md:mb-0">
+          <label className="block text-sm font-medium mb-2 text-black">
             Поиск
           </label>
           <input
-            type='search'
-            id='search'
-            placeholder='Поиск...'
-            className='min-w-[300px] w-full px-4 py-3 rounded leading-tight dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white'
+            type="search"
+            id="search"
+            placeholder="Поиск..."
+            className="min-w-[300px] w-full px-4 py-3 rounded-lg"
             value={searchQuery}
             onChange={handleSearchQueryChange}
           />
         </div>
 
         <button
-          className='btn-primary'
-          type='button'
+          className="btn-primary"
+          type="button"
           onClick={handleFilterClick}
         >
           Искать
